@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Video user study</title>
+<title>Image Enhancement User Study</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="FileSaver.js"></script>
 <style>
@@ -107,9 +107,8 @@ img {vertical-align: middle;}
 </head>
 <body>
 <div class="slideshow-container">
-<p>每个实验呈现的是3种不同的视频颜色传播结果。
-   请您根据视频“稳定性”和“颜色保真度”对以下3个视频进行排序，并综合考虑视频稳定性和颜色真实度，从中按照【最好】到【最差】依次放入下方的空格中，最左边的空格代表【最好】，最右边代表【最差】.</p>
-<p>(请注意，每个格子只能放置一个视频，不能重复放入。请先判断好再操作，谢谢)</p>
+<p>Please rank and drag the above five images according their color, hue, exposure. The top left corner is the best and the bottom right corner is the worst.</p>
+<p>Thanks for your help! Please send the text file after clicking submit button by wechat or email: gaoqiqihit@foxmail.com.</p>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
@@ -3324,7 +3323,7 @@ function myFunction() {
     var inputNodes = divNode.getElementsByTagName('input');
     result = result + divName + " " + inputNodes[0].value+"\n"
   }
-  var file = new File([result], "video_prop_yourname.txt", {type: "text/plain;charset=utf-8"});
+  var file = new File([result], "yourname.txt", {type: "text/plain;charset=utf-8"});
   saveAs(file);
 }
 </script>

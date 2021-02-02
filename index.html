@@ -1,0 +1,3332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Video user study</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="FileSaver.js"></script>
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+.slideshow-container {
+  max-width: 1920px;
+  position: relative;
+  margin: auto;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: -10px;
+  margin-top: -22px;
+  color: blue;
+  font-weight: bold;
+  font-size: 38px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0);
+}
+.text {
+  text-align: center;
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 5%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px},
+   .column {
+        width: 100%;
+    }
+}
+.column {
+    float: left;
+    width: 32%;
+    padding: 5px;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+#div_in {
+    float: left;
+    width: 320px;
+    height: 192px;
+    margin: 1px;
+    padding: 1px;
+    border: 1px dotted black;
+}
+.div {
+    float: left;
+    width: 320px;
+    height: 192px;
+    margin: 1px;
+    padding: 1px;
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<div class="slideshow-container">
+<p>每个实验呈现的是3种不同的视频颜色传播结果。
+   请您根据视频“稳定性”和“颜色保真度”对以下3个视频进行排序，并综合考虑视频稳定性和颜色真实度，从中按照【最好】到【最差】依次放入下方的空格中，最左边的空格代表【最好】，最右边代表【最差】.</p>
+<p>(请注意，每个格子只能放置一个视频，不能重复放入。请先判断好再操作，谢谢)</p>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn1" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000103.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image1">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn2" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000103.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image2">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn3" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000103.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image3">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn4" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000103.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image4">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn5" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000103.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image5">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div4" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div5" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn6" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000147.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image6">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn7" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000147.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image7">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn8" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000147.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image8">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn9" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000147.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image9">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn10" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000147.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image10">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div6" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div7" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div8" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div9" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div10" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn11" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000276.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image11">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn12" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000276.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image12">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn13" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000276.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image13">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn14" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000276.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image14">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn15" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000276.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image15">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div11" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div12" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div13" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div14" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div15" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn16" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000302.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image16">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn17" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000302.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image17">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn18" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000302.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image18">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn19" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000302.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image19">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn20" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000302.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image20">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div16" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div17" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div18" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div19" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div20" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn21" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000633.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image21">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn22" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000633.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image22">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn23" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000633.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image23">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn24" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000633.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image24">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn25" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000633.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image25">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div21" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div22" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div23" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div24" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div25" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn26" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000634.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image26">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn27" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000634.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image27">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn28" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000634.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image28">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn29" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000634.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image29">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn30" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000634.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image30">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div26" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div27" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div28" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div29" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div30" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn31" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000701.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image31">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn32" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000701.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image32">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn33" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000701.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image33">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn34" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000701.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image34">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn35" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000701.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image35">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div31" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div32" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div33" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div34" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div35" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn36" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000734.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image36">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn37" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000734.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image37">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn38" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000734.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image38">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn39" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000734.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image39">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn40" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000734.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image40">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div36" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div37" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div38" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div39" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div40" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn41" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000744.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image41">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn42" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000744.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image42">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn43" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000744.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image43">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn44" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000744.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image44">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn45" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000744.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image45">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div41" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div42" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div43" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div44" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div45" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn46" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000758.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image46">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn47" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000758.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image47">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn48" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000758.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image48">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn49" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000758.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image49">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn50" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000758.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image50">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div46" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div47" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div48" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div49" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div50" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn51" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000782.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image51">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn52" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000782.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image52">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn53" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000782.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image53">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn54" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000782.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image54">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn55" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000782.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image55">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div51" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div52" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div53" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div54" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div55" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn56" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000793.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image56">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn57" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000793.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image57">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn58" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000793.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image58">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn59" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000793.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image59">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn60" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000793.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image60">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div56" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div57" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div58" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div59" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div60" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn61" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/000849.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image61">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn62" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/000849.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image62">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn63" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/000849.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image63">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn64" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/000849.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image64">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn65" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/000849.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image65">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div61" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div62" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div63" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div64" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div65" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn66" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/001304.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image66">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn67" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/001304.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image67">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn68" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/001304.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image68">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn69" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/001304.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image69">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn70" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/001304.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image70">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div66" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div67" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div68" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div69" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div70" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn71" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/001394.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image71">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn72" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/001394.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image72">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn73" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/001394.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image73">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn74" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/001394.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image74">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn75" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/001394.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image75">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div71" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div72" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div73" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div74" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div75" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn76" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/001422.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image76">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn77" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/001422.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image77">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn78" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/001422.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image78">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn79" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/001422.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image79">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn80" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/001422.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image80">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div76" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div77" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div78" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div79" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div80" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn81" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/001700.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image81">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn82" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/001700.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image82">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn83" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/001700.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image83">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn84" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/001700.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image84">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn85" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/001700.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image85">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div81" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div82" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div83" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div84" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div85" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn86" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/001727.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image86">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn87" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/001727.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image87">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn88" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/001727.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image88">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn89" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/001727.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image89">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn90" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/001727.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image90">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div86" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div87" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div88" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div89" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div90" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn91" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/001793.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image91">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn92" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/001793.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image92">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn93" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/001793.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image93">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn94" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/001793.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image94">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn95" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/001793.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image95">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div91" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div92" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div93" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div94" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div95" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn96" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/001878.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image96">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn97" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/001878.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image97">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn98" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/001878.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image98">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn99" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/001878.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image99">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn100" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/001878.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image100">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div96" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div97" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div98" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div99" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div100" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn101" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/002015.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image101">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn102" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/002015.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image102">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn103" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/002015.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image103">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn104" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/002015.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image104">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn105" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/002015.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image105">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div101" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div102" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div103" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div104" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div105" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn106" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/002062.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image106">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn107" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/002062.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image107">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn108" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/002062.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image108">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn109" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/002062.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image109">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn110" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/002062.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image110">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div106" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div107" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div108" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div109" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div110" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn111" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/002142.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image111">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn112" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/002142.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image112">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn113" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/002142.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image113">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn114" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/002142.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image114">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn115" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/002142.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image115">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div111" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div112" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div113" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div114" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div115" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn116" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/002303.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image116">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn117" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/002303.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image117">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn118" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/002303.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image118">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn119" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/002303.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image119">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn120" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/002303.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image120">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div116" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div117" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div118" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div119" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div120" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn121" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/002311.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image121">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn122" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/002311.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image122">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn123" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/002311.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image123">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn124" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/002311.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image124">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn125" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/002311.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image125">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div121" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div122" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div123" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div124" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div125" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn126" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/002696.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image126">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn127" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/002696.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image127">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn128" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/002696.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image128">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn129" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/002696.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image129">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn130" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/002696.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image130">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div126" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div127" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div128" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div129" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div130" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn131" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/002738.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image131">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn132" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/002738.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image132">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn133" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/002738.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image133">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn134" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/002738.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image134">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn135" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/002738.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image135">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div131" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div132" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div133" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div134" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div135" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn136" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/002767.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image136">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn137" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/002767.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image137">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn138" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/002767.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image138">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn139" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/002767.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image139">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn140" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/002767.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image140">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div136" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div137" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div138" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div139" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div140" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn141" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/002856.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image141">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn142" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/002856.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image142">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn143" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/002856.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image143">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn144" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/002856.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image144">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn145" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/002856.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image145">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div141" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div142" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div143" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div144" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div145" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn146" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/002897.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image146">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn147" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/002897.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image147">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn148" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/002897.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image148">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn149" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/002897.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image149">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn150" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/002897.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image150">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div146" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div147" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div148" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div149" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div150" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn151" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/002947.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image151">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn152" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/002947.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image152">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn153" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/002947.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image153">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn154" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/002947.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image154">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn155" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/002947.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image155">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div151" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div152" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div153" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div154" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div155" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn156" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/003135.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image156">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn157" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/003135.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image157">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn158" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/003135.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image158">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn159" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/003135.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image159">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn160" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/003135.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image160">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div156" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div157" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div158" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div159" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div160" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn161" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/003186.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image161">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn162" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/003186.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image162">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn163" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/003186.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image163">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn164" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/003186.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image164">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn165" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/003186.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image165">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div161" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div162" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div163" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div164" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div165" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn166" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/003203.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image166">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn167" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/003203.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image167">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn168" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/003203.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image168">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn169" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/003203.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image169">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn170" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/003203.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image170">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div166" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div167" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div168" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div169" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div170" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn171" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/003222.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image171">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn172" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/003222.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image172">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn173" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/003222.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image173">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn174" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/003222.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image174">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn175" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/003222.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image175">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div171" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div172" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div173" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div174" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div175" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn176" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/003248.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image176">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn177" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/003248.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image177">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn178" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/003248.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image178">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn179" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/003248.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image179">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn180" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/003248.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image180">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div176" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div177" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div178" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div179" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div180" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn181" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/003275.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image181">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn182" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/003275.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image182">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn183" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/003275.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image183">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn184" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/003275.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image184">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn185" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/003275.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image185">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div181" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div182" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div183" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div184" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div185" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn186" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/003329.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image186">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn187" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/003329.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image187">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn188" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/003329.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image188">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn189" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/003329.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image189">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn190" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/003329.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image190">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div186" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div187" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div188" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div189" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div190" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn191" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/003479.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image191">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn192" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/003479.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image192">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn193" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/003479.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image193">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn194" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/003479.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image194">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn195" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/003479.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image195">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div191" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div192" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div193" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div194" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div195" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn196" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/003662.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image196">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn197" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/003662.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image197">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn198" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/003662.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image198">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn199" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/003662.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image199">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn200" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/003662.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image200">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div196" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div197" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div198" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div199" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div200" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn201" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/003693.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image201">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn202" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/003693.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image202">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn203" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/003693.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image203">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn204" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/003693.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image204">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn205" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/003693.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image205">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div201" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div202" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div203" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div204" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div205" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn206" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/003772.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image206">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn207" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/003772.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image207">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn208" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/003772.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image208">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn209" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/003772.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image209">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn210" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/003772.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image210">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div206" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div207" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div208" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div209" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div210" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn211" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/003842.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image211">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn212" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/003842.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image212">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn213" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/003842.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image213">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn214" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/003842.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image214">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn215" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/003842.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image215">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div211" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div212" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div213" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div214" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div215" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn216" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/004113.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image216">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn217" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/004113.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image217">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn218" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/004113.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image218">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn219" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/004113.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image219">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn220" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/004113.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image220">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div216" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div217" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div218" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div219" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div220" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn221" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/004255.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image221">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn222" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/004255.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image222">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn223" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/004255.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image223">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn224" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/004255.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image224">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn225" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/004255.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image225">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div221" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div222" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div223" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div224" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div225" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn226" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/004433.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image226">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn227" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/004433.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image227">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn228" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/004433.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image228">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn229" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/004433.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image229">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn230" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/004433.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image230">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div226" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div227" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div228" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div229" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div230" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn231" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/004543.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image231">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn232" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/004543.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image232">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn233" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/004543.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image233">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn234" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/004543.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image234">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn235" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/004543.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image235">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div231" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div232" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div233" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div234" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div235" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn236" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/004572.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image236">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn237" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/004572.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image237">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn238" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/004572.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image238">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn239" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/004572.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image239">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn240" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/004572.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image240">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div236" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div237" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div238" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div239" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div240" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn241" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/004698.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image241">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn242" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/004698.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image242">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn243" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/004698.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image243">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn244" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/004698.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image244">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn245" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/004698.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image245">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div241" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div242" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div243" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div244" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div245" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<div id="divIn246" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="rtvenet/004836.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="rtvenet/image246">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn247" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="gt/004836.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="gt/image247">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn248" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="hdrnet/004836.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="hdrnet/image248">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn249" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="tmm/004836.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="tmm/image249">
+</img>
+</div>
+</div>
+<div class="column">
+<div id="divIn250" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="UPE/004836.jpg" draggable="true" ondragstart="drag(event)" height="50%" width="50%" id="UPE/image250">
+</img>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div246" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div247" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div248" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div249" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+<div class="column">
+<div class="div" id="div250" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<h2>Complete : Thank you for your time! Please submit the results as a text file.</h2>
+<input type="button" width="400" height="80" align="center" onclick="myFunction()" value="Submit Result">
+</div>
+</div>
+</div>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+  <span class="dot" onclick="currentSlide(9)"></span>
+  <span class="dot" onclick="currentSlide(10)"></span>
+  <span class="dot" onclick="currentSlide(11)"></span>
+  <span class="dot" onclick="currentSlide(12)"></span>
+  <span class="dot" onclick="currentSlide(13)"></span>
+  <span class="dot" onclick="currentSlide(14)"></span>
+  <span class="dot" onclick="currentSlide(15)"></span>
+  <span class="dot" onclick="currentSlide(16)"></span>
+  <span class="dot" onclick="currentSlide(17)"></span>
+  <span class="dot" onclick="currentSlide(18)"></span>
+  <span class="dot" onclick="currentSlide(19)"></span>
+  <span class="dot" onclick="currentSlide(20)"></span>
+  <span class="dot" onclick="currentSlide(21)"></span>
+  <span class="dot" onclick="currentSlide(22)"></span>
+  <span class="dot" onclick="currentSlide(23)"></span>
+  <span class="dot" onclick="currentSlide(24)"></span>
+  <span class="dot" onclick="currentSlide(25)"></span>
+  <span class="dot" onclick="currentSlide(26)"></span>
+  <span class="dot" onclick="currentSlide(27)"></span>
+  <span class="dot" onclick="currentSlide(28)"></span>
+  <span class="dot" onclick="currentSlide(29)"></span>
+  <span class="dot" onclick="currentSlide(30)"></span>
+  <span class="dot" onclick="currentSlide(31)"></span>
+  <span class="dot" onclick="currentSlide(32)"></span>
+  <span class="dot" onclick="currentSlide(33)"></span>
+  <span class="dot" onclick="currentSlide(34)"></span>
+  <span class="dot" onclick="currentSlide(35)"></span>
+  <span class="dot" onclick="currentSlide(36)"></span>
+  <span class="dot" onclick="currentSlide(37)"></span>
+  <span class="dot" onclick="currentSlide(38)"></span>
+  <span class="dot" onclick="currentSlide(39)"></span>
+  <span class="dot" onclick="currentSlide(40)"></span>
+  <span class="dot" onclick="currentSlide(41)"></span>
+  <span class="dot" onclick="currentSlide(42)"></span>
+  <span class="dot" onclick="currentSlide(43)"></span>
+  <span class="dot" onclick="currentSlide(44)"></span>
+  <span class="dot" onclick="currentSlide(45)"></span>
+  <span class="dot" onclick="currentSlide(46)"></span>
+  <span class="dot" onclick="currentSlide(47)"></span>
+  <span class="dot" onclick="currentSlide(48)"></span>
+  <span class="dot" onclick="currentSlide(49)"></span>
+  <span class="dot" onclick="currentSlide(50)"></span>
+  <span class="dot" onclick="currentSlide(51)"></span>
+</div>
+</div>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  if (ev.target.id != "div_in")
+  {
+    var divNode = document.getElementById(ev.target.id);
+    var inputNodes = divNode.getElementsByTagName('input');
+    inputNodes[0].value = data
+  }
+}
+function myFunction() {
+  var id;
+  var result = "";
+  for (id = 1; id <= 200; id++) {
+    divName = "div" + id
+    var divNode = document.getElementById(divName);
+    var inputNodes = divNode.getElementsByTagName('input');
+    result = result + divName + " " + inputNodes[0].value+"\n"
+  }
+  var file = new File([result], "video_prop_yourname.txt", {type: "text/plain;charset=utf-8"});
+  saveAs(file);
+}
+</script>
+</body>
+<html>
